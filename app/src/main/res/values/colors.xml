@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorMap">#ded6cb</color>
+    <color name="colorBlue">#015b7e</color>
+    <color name="colorBlueClaro">#00afef</color>
+    <color name="colorBlueBarra">#578494</color>
+    <color name="colorTransparent">#99f1f1f1</color>
+    <color name="colorBarraToolbar">#005475</color>
+
+</resources>

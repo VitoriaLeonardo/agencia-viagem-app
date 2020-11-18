@@ -1,0 +1,2 @@
+rootProject.name='Sky Blue Application'
+include ':app'
