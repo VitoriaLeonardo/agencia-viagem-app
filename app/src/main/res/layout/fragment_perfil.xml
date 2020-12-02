@@ -21,14 +21,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="250dp"
         >
+        <!--
             <ImageView
                 android:layout_width="130dp"
                 android:layout_height="5px"
                 android:background="@color/colorBlue"
                 android:layout_gravity="center"
-            />
+            />-->
 
             <ImageView
                 android:layout_width="80dp"
@@ -38,12 +39,13 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/icon_perfil"
                 />
+        <!--
             <ImageView
             android:layout_width="130dp"
             android:layout_height="5px"
             android:background="@color/colorBlue"
             android:layout_gravity="center"
-            />
+            />-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -96,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="20dp"
         >
     <Button
         android:id="@+id/button"

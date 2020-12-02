@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         /*
         cadastrar = (Button) findViewById(R.id.btn_cadastrar);
         cadastrar.setOnClickListener(new View.OnClickListener(){

@@ -2,63 +2,182 @@ package com.cursoapp.skyblueapplication;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PagamentoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PagamentoFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public Button radioCartao;
+    public Button radioBoleto;
 
-    public PagamentoFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PagamentoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PagamentoFragment newInstance(String param1, String param2) {
-        PagamentoFragment fragment = new PagamentoFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    //Relacionado ao spinner
+    /*public Spinner spinner;*/
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        /*radioBoleto = (RadioButton) getView().findViewById(R.id.rdoBoleto);
+        radioCartao = (RadioButton) getView().findViewById(R.id.rdoCartao);*/
+/*
+        radioBoleto = (RadioButton) R.id.r;
+        radioCartao = (RadioButton) findViewById(R.id.btnMost);
+
+        final LinearLayout linearzinho = (LinearLayout) findViewById(R.id.testandoLay);
+        final LinearLayout linearzinhozinho = (LinearLayout) findViewById(R.id.testandoLayLay);
+*/
+        /*FragmentManager frg = getFragmentManager();
+        PagamentoFragment pgtFragment = (PagamentoFragment) frg.findFragmentById(R.id.spn_parcelas);
+
+        //Relacionado ao spinner
+        spinner = (Spinner) (R.id.spn_parcelas);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.parcelas_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);*/
+
+        /*radioBoleto = (RadioButton) getView().findViewById(R.id.rdoBoleto);
+        radioCartao = (RadioButton) getView().findViewById(R.id.rdoCartao);
+
+        final LinearLayout linearBoleto = (LinearLayout) getView().findViewById(R.id.linear_boleto_pag);
+        final LinearLayout linearCartao = (LinearLayout) getView().findViewById(R.id.linear_cartao_pag);
+
+
+        radioCartao.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (linearCartao.getVisibility() == v.VISIBLE) {
+                            linearCartao.setVisibility(v.GONE);
+                            linearBoleto.setVisibility(v.INVISIBLE);
+
+                        } else {
+                            linearCartao.setVisibility(v.VISIBLE);
+                        }
+                    }
+                }
+        );
+
+        radioBoleto.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (linearBoleto.getVisibility() == v.VISIBLE) {
+                            linearBoleto.setVisibility(v.GONE);
+                            linearCartao.setVisibility(v.INVISIBLE);
+                        } else {
+                            linearBoleto.setVisibility(v.VISIBLE);
+                        }
+                    }
+                }
+        );*/
+
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pagamento, container, false);
+        View view = inflater.inflate(R.layout.fragment_pagamento, container, false);
+
+        /*final LinearLayout linearBoleto = (LinearLayout) getView().findViewById(R.id.linear_boleto_pag);
+        final LinearLayout linearCartao = (LinearLayout) getView().findViewById(R.id.linear_cartao_pag);
+
+
+        radioCartao.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (linearCartao.getVisibility() == v.VISIBLE) {
+                            linearCartao.setVisibility(v.GONE);
+                            linearBoleto.setVisibility(v.INVISIBLE);
+
+                        } else {
+                            linearCartao.setVisibility(v.VISIBLE);
+                        }
+                    }
+                }
+        );
+
+        radioBoleto.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (linearBoleto.getVisibility() == v.VISIBLE) {
+                            linearBoleto.setVisibility(v.GONE);
+                            linearCartao.setVisibility(v.INVISIBLE);
+                        } else {
+                            linearBoleto.setVisibility(v.VISIBLE);
+                        }
+                    }
+                }
+        );*/
+        // return inflater.inflate(R.layout.fragment_pagamento, container, false);
+
+        return view;
+    }
+
+
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState){
+
+        radioBoleto = (RadioButton) getView().findViewById(R.id.rdoBoleto);
+        radioCartao = (RadioButton) getView().findViewById(R.id.rdoCartao);
+
+        //View view = inflater.inflate(R.layout.fragment_pagamento, container, false);
+
+        final LinearLayout linearBoleto = (LinearLayout) getView().findViewById(R.id.linear_boleto_pag);
+        final LinearLayout linearCartao = (LinearLayout) getView().findViewById(R.id.linear_cartao_pag);
+
+
+        radioCartao.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (linearCartao.getVisibility() == v.VISIBLE) {
+                            linearCartao.setVisibility(v.GONE);
+                            linearBoleto.setVisibility(v.INVISIBLE);
+                            boolean checked;
+                            if (((RadioButton) view).isChecked()) checked = true;
+                            else checked = false;
+
+                        } else {
+                            linearCartao.setVisibility(v.VISIBLE);
+                        }
+                    }
+                }
+        );
+
+        radioBoleto.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (linearBoleto.getVisibility() == v.VISIBLE) {
+                            linearBoleto.setVisibility(v.GONE);
+                            linearCartao.setVisibility(v.INVISIBLE);
+                            boolean checked;
+                            if (((RadioButton) view).isChecked()) checked = true;
+                            else checked = false;
+                        } else {
+                            linearBoleto.setVisibility(v.VISIBLE);
+                        }
+                    }
+                }
+        );
+
+        super.onViewCreated(view,savedInstanceState);
     }
 }
+

@@ -54,7 +54,7 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/edit_border_text"
-                android:hint="Nome Completo"
+                android:hint="Email"
                 android:inputType="textPersonName"
                 android:textSize="15sp"
                 android:padding="3dp"

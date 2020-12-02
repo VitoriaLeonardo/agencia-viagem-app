@@ -1,14 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PagamentoFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context=".PagamentoFragment"
+    android:background="@drawable/fundo_desfocado_2"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        >
+    <androidx.cardview.widget.CardView
+        card_view:cardUseCompatPadding="true"
+        card_view:cardPreventCornerOverlap="false"
+        card_view:cardElevation="0dp"
+        android:padding="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
 
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="90dp"
+        card_view:cardBackgroundColor="@color/colorTransparent"
+        card_view:cardCornerRadius="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pagamento"
+                android:textSize="30sp"
+                android:gravity="center_horizontal"/>
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:foregroundGravity="bottom"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="45dp"
+                android:background="#000000"
+                android:src="@drawable/opaco"
+                >
+            </ImageView>
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardElevation="0dp"
+            android:padding="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="90dp"
+            card_view:cardBackgroundColor="#B4C5C5C5"
+            card_view:cardCornerRadius="20dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="11dp"
+                android:text="Agora é hora de efetuar o pagamento. Confira se as informações do pacote estão corretas, antes de efeturar a compra. Selecione a forma de pagamento:"
+                android:textSize="15dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/rdoCartao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cartão"
+            android:checked="true"
+            android:layout_marginRight="50dp"
+            />
+
+            <RadioButton
+                android:id="@+id/rdoBoleto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Boleto"
+                />
+        </LinearLayout>
+
+        <!--Layout para Boleto-->
+        <LinearLayout
+            android:id="@+id/linear_boleto_pag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="240dp"
+            android:visibility="invisible"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="30dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CPF"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="17sp"
+                    />
+
+                <EditText
+                    android:id="@+id/edt_cpf_boleto_pag"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_border_text"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:paddingStart="15dp"
+                    android:hint="012.345.678-90"
+                    android:textSize="18sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="30dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nome do titular"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="17sp"
+                    />
+
+                <EditText
+                    android:id="@+id/edt_nome_boleto_pag"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_border_text"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:paddingStart="15dp"
+                    android:hint="Ex.: Maria da Silva"
+                    android:textSize="18sp"
+                    />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Data de vencimento:"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17sp"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_data_boleto_pag"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_border_text"
+                        android:inputType="date"
+                        android:padding="5dp"
+                        android:paddingStart="15dp"
+                        android:hint=""
+                        android:textSize="18sp"
+                        android:contextClickable="false"
+                        android:enabled="false"
+                        />
+                </LinearLayout>
+        </LinearLayout>
+        <!--Layout para cartão-->
+        <LinearLayout
+            android:id="@+id/linear_cartao_pag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="246dp"
+            android:visibility="visible"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="0dp"
+                android:layout_marginHorizontal="30dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nome do titular"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="17sp"
+                    />
+
+                <EditText
+                    android:id="@+id/edt_nome_cartao_pag"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_border_text"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:paddingStart="15dp"
+                    android:hint="Ex.: Maria da Silva"
+                    android:textSize="18sp"
+                    />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="-11dp"
+                    android:layout_marginHorizontal="30dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp"
+                        >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número do cartão"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17sp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CCV"
+                        android:layout_marginLeft="80dp"
+                        android:textSize="17sp"
+                        />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/edt_num_cartao_pag"
+                        android:layout_width="210dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_border_text"
+                        android:fontFamily="sans-serif"
+                        android:hint="0000 0000 0000 0000"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:paddingStart="15dp"
+                        android:textSize="18sp"/>
+                        <EditText
+                            android:id="@+id/edt_ccv_cartao_pag"
+                            android:layout_width="80dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/edit_border_text"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="15dp"
+                            android:padding="5dp"
+                            android:paddingStart="15dp"
+                            android:fontFamily="sans-serif"
+                            android:inputType="number"
+                            android:layout_marginTop="5dp"
+                            android:hint="000"/>
+                    </LinearLayout>
+                </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="13dp"
+            android:layout_marginHorizontal="30dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecione a quantidade de parcelas:"
+                android:layout_marginLeft="10dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/spn_parc_cartao_pag"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:paddingTop="500dp"
+                android:paddingVertical="500dp"
+                android:paddingStart="500dp"
+                android:background="@drawable/edit_border_text"
+                />
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-160dp"
+        >
+    <Button
+        android:id="@+id/btn_pagar_pag"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:background="@drawable/border_button"
+        android:text="Pagar"/>
+    </RelativeLayout>
+    </LinearLayout>
 </FrameLayout>
