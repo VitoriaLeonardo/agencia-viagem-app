@@ -6,13 +6,20 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toolbar;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //Relacionado ao spinner
         /*spinner = (Spinner) findViewById(R.id.spn_parcelas);
 
@@ -35,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-*/
+        */
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.tlbMain);
+/*
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tlbMain);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
         openFragment(homeFragment);*/
 
         //Inicializando com o homeFragment
-        Fragment homeFragment;
+        /*Fragment homeFragment;
         homeFragment = HomeFragment.newInstance();
-        openFragment(homeFragment);
+        openFragment(homeFragment);*/
 
+
+        //BottomNavigation
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -111,4 +123,31 @@ public class MainActivity extends AppCompatActivity {
             // Another interface callback
         }
     }*/
+
+    //SearchView
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+        }
+    }
+    //Search
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.tlbMain);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+
+        return true;
+    }
 }

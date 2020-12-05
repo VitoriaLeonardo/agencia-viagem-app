@@ -1,5 +1,6 @@
 package com.cursoapp.skyblueapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.Button;
 
 public class HomeFragment extends Fragment {
     private Button buttonT;
+    private Button buttonT2;
     public static Fragment newInstance() {
         HomeFragment homeFragment = new HomeFragment();
         return homeFragment;
@@ -22,7 +24,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -40,6 +41,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        buttonT2 = (Button) view.findViewById(R.id.buttonTeste2);
+        buttonT2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), CadastroClienteActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

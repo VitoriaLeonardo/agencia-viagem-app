@@ -6,24 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button cadastrar;
-
+    public TextView txtCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        /*
-        cadastrar = (Button) findViewById(R.id.btn_cadastrar);
-        cadastrar.setOnClickListener(new View.OnClickListener(){
+        txtCadastrar = (TextView) findViewById(R.id.txt_cadastrar_login);
+        txtCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, CadastroClienteActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 }

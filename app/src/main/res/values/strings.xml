@@ -17,6 +17,8 @@
     <string name="sair_perfil">Sair</string>
 
     <string name="entrar_perfil">Login</string>
+    <string name="entrar_cadastro"> <u>Entrar</u> </string>
+    <string name="cadastro_entrar"> <u>Cadastre-se</u> </string>
 
 
     <string-array name="parcelas_array">

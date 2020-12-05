@@ -10,5 +10,5 @@
     <color name="colorTransparent">#99f1f1f1</color>
     <color name="colorBarraToolbar">#005475</color>
     <color name="colorGreen">#1B801F</color>
-
+    <color name="colorLink">#3245AE</color>
 </resources>

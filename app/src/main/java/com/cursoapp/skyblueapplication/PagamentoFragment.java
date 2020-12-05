@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,28 +14,22 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class PagamentoFragment extends Fragment {
 
-    public Button radioCartao;
-    public Button radioBoleto;
+    public RadioButton radioCartao;
+    public RadioButton radioBoleto;
+    public RadioGroup radioGroup;
+    public Button btnPagar;
 
     //Relacionado ao spinner
     /*public Spinner spinner;*/
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        /*radioBoleto = (RadioButton) getView().findViewById(R.id.rdoBoleto);
-        radioCartao = (RadioButton) getView().findViewById(R.id.rdoCartao);*/
-/*
-        radioBoleto = (RadioButton) R.id.r;
-        radioCartao = (RadioButton) findViewById(R.id.btnMost);
-
-        final LinearLayout linearzinho = (LinearLayout) findViewById(R.id.testandoLay);
-        final LinearLayout linearzinhozinho = (LinearLayout) findViewById(R.id.testandoLayLay);
-*/
         /*FragmentManager frg = getFragmentManager();
         PagamentoFragment pgtFragment = (PagamentoFragment) frg.findFragmentById(R.id.spn_parcelas);
 
@@ -93,41 +88,24 @@ public class PagamentoFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_pagamento, container, false);
 
-        /*final LinearLayout linearBoleto = (LinearLayout) getView().findViewById(R.id.linear_boleto_pag);
-        final LinearLayout linearCartao = (LinearLayout) getView().findViewById(R.id.linear_cartao_pag);
 
-
-        radioCartao.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (linearCartao.getVisibility() == v.VISIBLE) {
-                            linearCartao.setVisibility(v.GONE);
-                            linearBoleto.setVisibility(v.INVISIBLE);
-
-                        } else {
-                            linearCartao.setVisibility(v.VISIBLE);
-                        }
-                    }
-                }
-        );
-
-        radioBoleto.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (linearBoleto.getVisibility() == v.VISIBLE) {
-                            linearBoleto.setVisibility(v.GONE);
-                            linearCartao.setVisibility(v.INVISIBLE);
-                        } else {
-                            linearBoleto.setVisibility(v.VISIBLE);
-                        }
-                    }
-                }
-        );*/
+        btnPagar = (Button) view.findViewById(R.id.btn_pagar_pag);
+        btnPagar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View view){
+                Fragment pagRealizado = new PagRealizadoFragment();
+                openFragment(pagRealizado);
+            }
+        });
         // return inflater.inflate(R.layout.fragment_pagamento, container, false);
 
         return view;
+    }
+    private void openFragment(Fragment fragment){
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 
@@ -135,6 +113,7 @@ public class PagamentoFragment extends Fragment {
 
         radioBoleto = (RadioButton) getView().findViewById(R.id.rdoBoleto);
         radioCartao = (RadioButton) getView().findViewById(R.id.rdoCartao);
+        radioGroup = (RadioGroup) getView().findViewById(R.id.rdoGroupPag);
 
         //View view = inflater.inflate(R.layout.fragment_pagamento, container, false);
 
@@ -146,13 +125,9 @@ public class PagamentoFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        linearBoleto.setVisibility(v.INVISIBLE);
                         if (linearCartao.getVisibility() == v.VISIBLE) {
-                            linearCartao.setVisibility(v.GONE);
-                            linearBoleto.setVisibility(v.INVISIBLE);
-                            boolean checked;
-                            if (((RadioButton) view).isChecked()) checked = true;
-                            else checked = false;
-
+                            linearCartao.setVisibility(v.VISIBLE);
                         } else {
                             linearCartao.setVisibility(v.VISIBLE);
                         }
@@ -164,12 +139,9 @@ public class PagamentoFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        linearCartao.setVisibility(v.INVISIBLE);
                         if (linearBoleto.getVisibility() == v.VISIBLE) {
-                            linearBoleto.setVisibility(v.GONE);
-                            linearCartao.setVisibility(v.INVISIBLE);
-                            boolean checked;
-                            if (((RadioButton) view).isChecked()) checked = true;
-                            else checked = false;
+                            linearBoleto.setVisibility(v.VISIBLE);
                         } else {
                             linearBoleto.setVisibility(v.VISIBLE);
                         }
