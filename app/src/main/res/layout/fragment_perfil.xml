@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".PerfilFragment"
     android:orientation="vertical">
     <!--android:background="@drawable/fundo_desfocado_3"-->
@@ -17,11 +18,31 @@
         app:cardCornerRadius="20dp"
         >-->
     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tlbMain"
+            android:background="@color/colorBlue"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            card_view:subtitleTextAppearance="?attr/homeAsUpIndicator"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                />
+        </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="210dp"
         >
         <!--
             <ImageView
@@ -100,12 +121,16 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         >
-    <Button
-        android:id="@+id/button"
-        android:layout_width="320dp"
-        android:layout_height="49dp"
-        android:background="@drawable/edit_border_button"
-        android:text="Sair"/>
+        <Button
+            android:id="@+id/btn_sair"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_border_button"
+            android:text="Sair"
+            android:layout_marginVertical="20dp"
+            android:layout_gravity="center_horizontal"
+            />
     </RelativeLayout>
     <!--</androidx.cardview.widget.CardView>-->
+</LinearLayout>
 </LinearLayout>

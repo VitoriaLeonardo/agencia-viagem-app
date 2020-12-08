@@ -25,6 +25,8 @@
 
     <string name="cartao">Pagamento efetuado com sucesso! Esperamos que goste da sua viagem!</string>
 
+    <string name="alimentador"><b>Como funciona o aluguel do alimentador?</b> Voce inclui ele no seu pacote e ele chega na sua casa, assim, quando você fizer uma viagem rápida, o seu pet não fica sem a ração dele! 🥰</string>
+
 
     <string-array name="parcelas_array">
         <item>2x</item>

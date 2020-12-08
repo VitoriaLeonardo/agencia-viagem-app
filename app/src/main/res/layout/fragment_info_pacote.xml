@@ -13,7 +13,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f2f2f2">
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tlbMain"
+        android:background="@color/colorBlue"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info pacote"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            />
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -31,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PACOTE XYZ"
+            android:text="Lual em Ilhabela"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:layout_marginHorizontal="10dp"
@@ -83,7 +98,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="500dp"
-                android:src="@drawable/ic_home_24dp"/>
+                android:src="@drawable/ic_description_black_24dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +108,7 @@
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="São Paulo / SP  fsdf fsdfsd efsdfsdfsdfsdfsd lalalalalallaallalalalala1238521020623020 llaallalalalallalalal"
+                    android:text="Passar o dia inteiro curtindo as belas praias, gastronomia e paisagens da famosa Ilhabela."
                     />
             </LinearLayout>
         </LinearLayout>
@@ -138,7 +153,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginLeft="500dp"
-                        android:src="@drawable/ic_home_24dp"/>
+                        android:src="@drawable/ic_info_black_24dp"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -148,14 +163,20 @@
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="São Paulo / SP  fsdf fsdfsd efsdfsdfsdfsdfsd lalalalalallaallalalalala1238521020623020 llaallalalalallalalal"
+                    android:text="Origem: 05367-040, Rua Professor Josué Callander dos Reis, 45, Jardim Santos Dumont, São Paulo, SP"
+                    /><TextView
+                    android:paddingTop="4dp"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Destino: Pousada Flor da Ilha, 11630-971, Avenida Riachuelo 5970, 23, Centro, Ilhabela, SP"
                     />
                 </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-        <!--Descrição-->
+        <!--Data-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,7 +213,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginLeft="500dp"
-                        android:src="@drawable/ic_home_24dp"/>
+                        android:src="@drawable/ic_date_range_black_24dp"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -202,7 +223,7 @@
                             android:layout_margin="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="São Paulo / SP  fsdf fsdfsd efsdfsdfsdfsdfsd lalalalalallaallalalalala1238521020623020 llaallalalalallalalal"
+                            android:text="2021/10/17 - 2021/10/18"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -246,7 +267,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_marginLeft="500dp"
-                            android:src="@drawable/ic_home_24dp"/>
+                            android:src="@drawable/ic_airplanemode_active_black_24dp"/>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -256,14 +277,15 @@
                                 android:layout_margin="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="São Paulo / SP  fsdf fsdfsd efsdfsdfsdfsdfsd lalalalalallaallalalalala1238521020623020 llaallalalalallalalal"
+                                android:text="MICRO ÔNIBUS"
                                 />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <!--Tipo de transporte-->
+
+            <!--Valor unitário-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -274,7 +296,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Descrição123"
+                    android:text="Valor unitário"
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp"
                     android:textSize="20dp"/>
@@ -300,7 +322,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_marginLeft="500dp"
-                            android:src="@drawable/ic_home_24dp"/>
+                            android:src="@drawable/ic_attach_money_black_24dp"/>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -310,17 +332,334 @@
                                 android:layout_margin="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="São Paulo / SP  fsdf fsdfsd efsdfsdfsdfsdfsd lalalalalallaallalalalala1238521020623020 llaallalalalallalalal"
+                                android:text="200.50"
                                 />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-        <Button
+
+
+            <!--Compra qtd adultos-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="1dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Garanta sua viagem!"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="1dp"
+                    android:textSize="25dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="14dp"
+                    android:textSize="16sp"
+                    android:text="Preencha as informações solicitadas:"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:cardPreventCornerOverlap="false"
+                        card_view:cardElevation="2dp"
+                        android:padding="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="1dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_margin="1dp"
+                                android:textStyle="bold"
+                                android:text="Quantidade de adultos:"
+                                android:layout_marginRight="50dp"
+                                />
+                        <LinearLayout
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"/>
+
+                            <NumberPicker android:id="@+id/numberpicker"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scrollbarSize="3dp"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="14dp"
+                    android:text="Selecione a quantidade de adultos:"
+                    />-->
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <!--Compra qtd crianças-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:cardPreventCornerOverlap="false"
+                        card_view:cardElevation="2dp"
+                        android:padding="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="1dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_margin="1dp"
+                                android:textStyle="bold"
+                                android:text="Quantidade de crianças:"
+                                android:layout_marginRight="50dp"
+                                />
+                            <LinearLayout
+                                android:layout_width="50dp"
+                                android:layout_height="match_parent"/>
+
+                            <NumberPicker android:id="@+id/numberpicker2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scrollbarSize="3dp"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="14dp"
+                        android:text="Selecione a quantidade de adultos:"
+                        />-->
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!--Compra qtd quartos-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:cardPreventCornerOverlap="false"
+                        card_view:cardElevation="2dp"
+                        android:padding="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="1dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_margin="1dp"
+                                android:textStyle="bold"
+                                android:text="Quantidade de quartos:"
+                                android:layout_marginRight="50dp"
+                                />
+                            <LinearLayout
+                                android:layout_width="50dp"
+                                android:layout_height="match_parent"/>
+
+                            <NumberPicker android:id="@+id/numberpicker3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scrollbarSize="3dp"
+                                android:gravity="center_horizontal"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="14dp"
+                        android:text="Selecione a quantidade de adultos:"
+                        />-->
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!--Compra alimentador-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:cardPreventCornerOverlap="false"
+                        card_view:cardElevation="2dp"
+                        android:padding="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="20dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="1dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_margin="1dp"
+                                android:textStyle="bold"
+                                android:text="Deseja alugar o alimentador?"
+                                android:layout_marginRight="50dp"
+                                />
+                        </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="35dp"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                >
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvRg"
+                                    android:layout_centerHorizontal="true"
+                                    android:orientation="horizontal"
+                                    android:showDividers="beginning|middle|end"
+                                    android:layout_marginTop="1dp"
+                                    android:id="@+id/rdoGroupPag" >
+                                    <RadioButton
+                                        android:id="@+id/rdoSimAlim"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sim"
+                                        android:checked="false"
+                                        android:layout_marginRight="50dp"
+                                        />
+
+                                    <RadioButton
+                                        android:id="@+id/rdoNaoAlim"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:checked="true"
+                                        android:text="Não"
+                                        />
+                                </RadioGroup>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="50dp"
+                                android:layout_height="match_parent"/>
+                        <androidx.cardview.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardPreventCornerOverlap="false"
+                            card_view:cardElevation="0dp"
+                            android:padding="0dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_marginBottom="10dp"
+                            card_view:cardBackgroundColor="#B4C5C5C5"
+                            card_view:cardCornerRadius="20dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="11dp"
+                                android:text="@string/alimentador"
+                                android:textSize="15dp"/>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="14dp"
+                        android:text="Selecione a quantidade de adultos:"
+                        />-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
             android:id="@+id/btn_comprar_pacote"
             android:layout_width="320dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/edit_border_button"
             android:layout_margin="50dp"

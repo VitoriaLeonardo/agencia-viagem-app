@@ -1,5 +1,6 @@
 package com.cursoapp.skyblueapplication;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -33,11 +34,16 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        esconderActionBar(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_perfil, container, false);
+    }
+    public static void esconderActionBar(Activity parent) {
+        MainActivity mainActivity = (MainActivity) parent;
+        mainActivity.getSupportActionBar().hide();
     }
 }
