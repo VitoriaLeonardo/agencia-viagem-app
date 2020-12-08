@@ -9,7 +9,8 @@
         <item name="android:statusBarColor">@color/colorBlue</item>
 
     </style>-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!--Para estilizar a toolbar-->
+    <style name="AppThemeNoAction" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@color/colorBarraToolbar</item>
@@ -20,6 +21,13 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">#3F51B5</item>
+    </style>
 
+    <!--Theme do sistema-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorBlue</item>
+        <item name="colorPrimaryDark">@color/colorBlue</item>
+        <item name="colorAccent">@color/colorBlue</item>
+        <item name="android:statusBarColor">@color/colorBlue</item>
     </style>
 </resources>

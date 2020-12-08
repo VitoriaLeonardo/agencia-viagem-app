@@ -11,4 +11,6 @@
     <color name="colorBarraToolbar">#005475</color>
     <color name="colorGreen">#1B801F</color>
     <color name="colorLink">#3245AE</color>
+    <color name="colorStatusBar">#3F51B5</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>

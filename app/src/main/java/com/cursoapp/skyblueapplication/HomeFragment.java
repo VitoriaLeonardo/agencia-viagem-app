@@ -1,5 +1,6 @@
 package com.cursoapp.skyblueapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,6 +17,7 @@ import android.widget.Button;
 public class HomeFragment extends Fragment {
     private Button buttonT;
     private Button buttonT2;
+
     public static Fragment newInstance() {
         HomeFragment homeFragment = new HomeFragment();
         return homeFragment;
@@ -24,6 +26,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mostrarActionBar(getActivity());
     }
 
     @Override
@@ -45,13 +48,15 @@ public class HomeFragment extends Fragment {
         buttonT2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getActivity(), CadastroClienteActivity.class);
-                startActivity(intent);
+                Fragment infoPacFragment = new InfoPacoteFragment();
+                openFragment(infoPacFragment);
             }
         });
 
         return view;
     }
+
+    //Abrindo Fragment
     private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
@@ -59,5 +64,14 @@ public class HomeFragment extends Fragment {
         transaction.commit();
     }
 
+    //ActionBar
+    public static void mostrarActionBar(Activity parent) {
+        MainActivity mainActivity = (MainActivity) parent;
+        mainActivity.getSupportActionBar().show();
+    }
+    public static void esconderActionBar(Activity parent) {
+        MainActivity mainActivity = (MainActivity) parent;
+        mainActivity.getSupportActionBar().hide();
+    }
 
 }

@@ -20,6 +20,11 @@
     <string name="entrar_cadastro"> <u>Entrar</u> </string>
     <string name="cadastro_entrar"> <u>Cadastre-se</u> </string>
 
+    <string name="boleto">Agora é só efetuar o pagamento através do boleto que foi enviado para o e-mail cadastrado.
+        Esperamos que goste da sua viagem!</string>
+
+    <string name="cartao">Pagamento efetuado com sucesso! Esperamos que goste da sua viagem!</string>
+
 
     <string-array name="parcelas_array">
         <item>2x</item>

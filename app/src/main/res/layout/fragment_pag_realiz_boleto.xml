@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PagRealizadoFragment"
+    tools:context=".PagRealizBoletoFragment"
     android:background="@drawable/fundo_desfocado_2"
     >
     <LinearLayout
@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Cartão"
+                    android:text="Boleto"
                     android:textSize="30sp"
                     android:gravity="center_horizontal"/>
 
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cartao"
+                android:text="@string/boleto"
                 android:layout_marginVertical="100dp"
                 android:layout_marginHorizontal="50dp"
                 android:textAlignment="center"

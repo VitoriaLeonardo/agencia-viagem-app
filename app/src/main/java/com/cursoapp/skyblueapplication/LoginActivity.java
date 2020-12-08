@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //TextView para cadastrar
         txtCadastrar = (TextView) findViewById(R.id.txt_cadastrar_login);
         txtCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
