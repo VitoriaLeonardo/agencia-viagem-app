@@ -14,8 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.cursoapp.skyblueapplication.Classes.MeuIP;
+
 public class PerfilFragment extends Fragment {
     private Button entrarPerfil;
+
 
     public static Fragment newInstance() {
         PerfilFragment perfilFragment = new PerfilFragment();
@@ -52,12 +55,15 @@ public class PerfilFragment extends Fragment {
 
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         entrarPerfil = (Button) view.findViewById(R.id.btn_entrar_perfil);
+        entrarPerfil.setText(MeuIP.textButtom);
         entrarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
+
             }
+
         });
     }
 }

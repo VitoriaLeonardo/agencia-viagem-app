@@ -26,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.cursoapp.skyblueapplication.Classes.Destino;
+import com.cursoapp.skyblueapplication.Classes.MeuIP;
 import com.cursoapp.skyblueapplication.Classes.Origem;
 import com.cursoapp.skyblueapplication.Classes.Pacote;
 
@@ -123,7 +124,7 @@ public class InfoPacoteFragment extends Fragment {
 
 
         //Get
-        String url = "http://192.168.0.103/api/getPacote.php?id="+id;
+        String url = "http://"+ MeuIP.ip +"/api/getPacote.php?id="+id;
 
         //Para setar
         mQueue = Volley.newRequestQueue(getContext());

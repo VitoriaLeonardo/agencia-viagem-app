@@ -20,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.cursoapp.skyblueapplication.Classes.Cliente;
+import com.cursoapp.skyblueapplication.Classes.MeuIP;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -74,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if(status==200){
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(intent);
+                                        MeuIP.textButtom = "Sair";
                                     }else{
                                         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                                         emailLogin.setText("");

@@ -27,6 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.cursoapp.skyblueapplication.Adapter.PacoteAdapter;
+import com.cursoapp.skyblueapplication.Classes.MeuIP;
 import com.cursoapp.skyblueapplication.Classes.Pacote;
 import com.cursoapp.skyblueapplication.Metodos.GetPacote;
 import com.cursoapp.skyblueapplication.Metodos.GetPacotes;
@@ -66,7 +67,7 @@ public class HomeFragment extends Fragment {
         GetPacotes getPacotesMethod = new GetPacotes();
         getPacotesMethod.getPacotes();
 
-        //mostrarActionBar(getActivity());
+        mostrarActionBar(getActivity());
     }
 
     @Override
@@ -84,7 +85,7 @@ public class HomeFragment extends Fragment {
 
 
         //Colocar o nome da máquina e não o localhost
-        String url = "http://192.168.0.103/api/getPacotes.php";
+        String url = "http://"+ MeuIP.ip +"/api/getPacotes.php";
 
         //Para setar
         mQueue = Volley.newRequestQueue(getContext());
@@ -132,5 +133,10 @@ public class HomeFragment extends Fragment {
         transaction.replace(R.id.container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public static void mostrarActionBar(Activity parent) {
+        MainActivity mainActivity = (MainActivity) parent;
+        mainActivity.getSupportActionBar().show();
     }
 }

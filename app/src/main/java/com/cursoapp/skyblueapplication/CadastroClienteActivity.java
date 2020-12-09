@@ -38,6 +38,8 @@ public class CadastroClienteActivity extends AppCompatActivity {
     private EditText telCad;
     private EditText emailCad;
     private EditText senhaCad;
+    private EditText cepCad;
+    private EditText numeroCad;
     private Button cadastrar;
 
     @Override
@@ -60,6 +62,9 @@ public class CadastroClienteActivity extends AppCompatActivity {
         telCad = (EditText) findViewById(R.id.edt_tel_cad_cli);
         cpfCad = (EditText) findViewById(R.id.edt_cpf_cli);
         senhaCad = (EditText) findViewById(R.id.edt_senha_cad_cli);
+
+        cepCad = (EditText) findViewById(R.id.edt_cep_cad_cli);
+        numeroCad = (EditText) findViewById(R.id.edt_n_cad_cli);
 
         cadastrar = (Button) findViewById(R.id.btn_cadastrar_login);
 
@@ -100,6 +105,17 @@ public class CadastroClienteActivity extends AppCompatActivity {
                     }
                 });
                 mQueue.add(request);
+
+                nomeCad.setText("");
+                cpfCad.setText("");
+                telCad.setText("");
+                emailCad.setText("");
+                senhaCad.setText("");
+                cepCad.setText("");
+                numeroCad.setText("");
+
+                Intent intent = new Intent(CadastroClienteActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
