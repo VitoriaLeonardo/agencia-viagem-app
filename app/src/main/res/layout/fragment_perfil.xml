@@ -82,39 +82,7 @@
                 android:textSize="22sp"
                 />
         </LinearLayout>
-    <!--</androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="5dp"
-        app:cardBackgroundColor="@color/colorTransparent"
-        app:cardCornerRadius="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Informações do usuário"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="23dp"
-            android:textSize="18sp"
-            />
-        <ImageView
-            android:layout_width="180dp"
-            android:layout_height="5px"
-            android:background="@color/colorBlue"
-            android:layout_gravity="center"
-            />
 
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="40dp"
-        android:background="@color/colorTransparent"
-        app:cardCornerRadius="20dp"
-        >-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -122,11 +90,11 @@
         android:layout_marginTop="20dp"
         >
         <Button
-            android:id="@+id/btn_sair"
+            android:id="@+id/btn_entrar_perfil"
             android:layout_width="200dp"
             android:layout_height="30dp"
             android:background="@drawable/edit_border_button"
-            android:text="Sair"
+            android:text="Entrar"
             android:layout_marginVertical="20dp"
             android:layout_gravity="center_horizontal"
             />

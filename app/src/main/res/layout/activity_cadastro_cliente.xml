@@ -184,7 +184,7 @@
                     android:textSize="15sp"
                     android:padding="5dp"
                     android:paddingStart="15dp"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textPassword"
                     android:hint="******"
                     />
         </LinearLayout>

@@ -40,7 +40,7 @@
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- Cadastro Cliente -->
         <activity android:name=".CadastroClienteActivity" /> <!-- Locais -->
-        <activity android:name=".LocaisActivity" /> <!-- Main -->
+        <!-- Main -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

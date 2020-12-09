@@ -36,14 +36,24 @@
             android:layout_marginBottom="1dp"
             android:textSize="25dp"/>
     </LinearLayout>
+
    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginHorizontal="8dp"
+       android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="10dp"
+       android:layout_marginBottom="60dp"
         >
 
-        <androidx.cardview.widget.CardView
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_lista_pacotes"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:scrollbars="vertical"
+           />
+
+<!--        <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             app:cardBackgroundColor="@color/colorWhite"
             app:cardCornerRadius="20dp"
@@ -67,7 +77,7 @@
                 android:layout_height="120dp"
                 android:layout_marginRight="15dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/fundo_desfocado_3">
+                android:src="@drawable/img_ubatuba">
             </ImageView>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -77,29 +87,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="23dp"
-                    android:text="Praia Bonita Resort Conventions "
+                    android:text="Pousada em Ubatuba"
                     android:textSize="18dp"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Está localizado na orla da Praia de Cumurupim"
+                    android:text="A Praia do Cedro (ou Cedrinho) é um paraí..."
                     android:textSize="15dp"
                     />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="R$ 1.500 por pessoa"
+                        android:text="R$ 450.99 por pessoa"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
 
                     <Button
-                        android:id="@+id/buttonTeste"
+                        android:id="@+id/buttonInfoPac1"
                         android:layout_width="150dp"
                         android:layout_height="30dp"
-                        android:text="Mais info"/>
+                        android:paddingBottom="5dp"
+                        android:background="@color/colorTransparent"
+                        android:text="Ver mais"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -129,7 +141,7 @@
                     android:layout_height="120dp"
                     android:layout_marginRight="15dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/fundo_desfocado_2">
+                    android:src="@drawable/img_serra_negra">
                 </ImageView>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -139,28 +151,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="23dp"
-                        android:text="Praia Bonita Resort Conventions "
+                        android:text="Inverno Serra Negra"
                         android:textSize="18dp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Está localizado na orla da Praia de Cumurupim"
+                        android:text="Excelente lugar para compras de malhas e curtir..."
                         android:textSize="15dp"
                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="R$ 1.500 por pessoa"
+                        android:text="R$ 550.99 por pessoa"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
                     <Button
-                        android:id="@+id/buttonTeste2"
+                        android:id="@+id/buttonInfoPac2"
                         android:layout_width="150dp"
                         android:layout_height="30dp"
-                        android:text="Mais info activity"/>
+                        android:paddingBottom="5dp"
+                        android:background="@color/colorTransparent"
+                        android:text="Ver mais"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -189,7 +203,7 @@
                     android:layout_height="120dp"
                     android:layout_marginRight="15dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/fundo_desfocado">
+                    android:src="@drawable/img_ilhabela">
                 </ImageView>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -199,23 +213,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="23dp"
-                        android:text="Praia Bonita Resort Conventions "
+                        android:text="Lual em Ilhabela"
                         android:textSize="18dp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Está localizado na orla da Praia de Cumurupim"
+                        android:text="Passar o dia inteiro curtindo as belas praias, gastronomia..."
                         android:textSize="15dp"
                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="R$ 1.500 por pessoa"
+                        android:text="R$ 200.5 por pessoa"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/buttonInfoPac3"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:paddingBottom="5dp"
+                        android:background="@color/colorTransparent"
+                        android:text="Ver mais"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -255,7 +277,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="23dp"
-                        android:text="Praia Bonita Resort Conventions "
+                        android:text="FDS da Aventura"
                         android:textSize="18dp"
                         android:textStyle="bold"/>
 
@@ -272,9 +294,16 @@
                         android:text="R$ 1.500 por pessoa"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
+                    <Button
+                        android:id="@+id/buttonInfoPac4"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:paddingBottom="5dp"
+                        android:background="@color/colorTransparent"
+                        android:text="Ver mais"/>
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>-->
    </LinearLayout>
     </LinearLayout>
 </FrameLayout>

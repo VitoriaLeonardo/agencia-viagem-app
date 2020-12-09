@@ -8,22 +8,50 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.cursoapp.skyblueapplication.Adapter.PacoteAdapter;
 import com.cursoapp.skyblueapplication.Classes.Pacote;
+import com.cursoapp.skyblueapplication.Metodos.GetPacote;
 import com.cursoapp.skyblueapplication.Metodos.GetPacotes;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeFragment extends Fragment {
-    private Button buttonT;
+    private Button buttonInfo1;
+    private Button buttonInfo2;
     private Button buttonT2;
     public NumberPicker numberPicker;
+
+    //RecyclerView
+    private RecyclerView rvPacotes;
+    private RecyclerView.LayoutManager mng;
+    private RecyclerView.Adapter adp;
+    private Button btnVerPac;
+    public List<Pacote> listPac= new ArrayList<>();
+    private RequestQueue mQueue;
 
 
     public static Fragment newInstance() {
@@ -38,7 +66,7 @@ public class HomeFragment extends Fragment {
         GetPacotes getPacotesMethod = new GetPacotes();
         getPacotesMethod.getPacotes();
 
-        mostrarActionBar(getActivity());
+        //mostrarActionBar(getActivity());
     }
 
     @Override
@@ -47,23 +75,53 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        buttonT = (Button) view.findViewById(R.id.buttonTeste);
-        buttonT.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Fragment infoPacFragment = new PagamentoFragment();
-                openFragment(infoPacFragment);
-            }
-        });
+        //RecyclerView
+        rvPacotes = (RecyclerView) view.findViewById(R.id.rv_lista_pacotes);
+        rvPacotes.setHasFixedSize(true);
 
-        buttonT2 = (Button) view.findViewById(R.id.buttonTeste2);
-        buttonT2.setOnClickListener(new View.OnClickListener(){
+        mng = new LinearLayoutManager(getContext());
+        rvPacotes.setLayoutManager(mng);
+
+
+        //Colocar o nome da máquina e não o localhost
+        String url = "http://192.168.0.103/api/getPacotes.php";
+
+        //Para setar
+        mQueue = Volley.newRequestQueue(getContext());
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("packages");
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+
+                                JSONObject packagesJson = jsonArray.getJSONObject(i);
+
+                                Pacote pacote = new Pacote();
+                                pacote.id = packagesJson.getInt("id");
+                                pacote.nome = packagesJson.getString("nome");
+                                pacote.descricao = packagesJson.getString("descricaoPacote");
+                                pacote.imagem = packagesJson.getString("imagem");
+                                pacote.valorUnitario = (float) packagesJson.getDouble("valorUnitario");
+
+                                listPac.add(pacote);
+
+                            }
+                            adp = new PacoteAdapter(listPac, getActivity());
+                            rvPacotes.setAdapter(adp);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onClick(View view){
-                Fragment infoPacFragment = new InfoPacoteFragment();
-                openFragment(infoPacFragment);
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
             }
         });
+         mQueue.add(request);
 
         return view;
     }
@@ -75,15 +133,4 @@ public class HomeFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-    //ActionBar
-    public static void mostrarActionBar(Activity parent) {
-        MainActivity mainActivity = (MainActivity) parent;
-        mainActivity.getSupportActionBar().show();
-    }
-    public static void esconderActionBar(Activity parent) {
-        MainActivity mainActivity = (MainActivity) parent;
-        mainActivity.getSupportActionBar().hide();
-    }
-
 }

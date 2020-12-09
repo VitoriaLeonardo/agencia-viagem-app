@@ -23,8 +23,10 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -67,8 +69,8 @@ public class PagamentoFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         //Spinner
-        FragmentManager frg = getFragmentManager();
-        PagamentoFragment pgtFragment = (PagamentoFragment) frg.findFragmentById(R.id.spn_parc_cartao_pag);
+        /*FragmentManager frg = getFragmentManager();
+        PagamentoFragment pgtFragment = (PagamentoFragment) frg.findFragmentById(R.id.spn_parc_cartao_pag);*/
 
 
         //Relacionado ao spinner
@@ -127,10 +129,18 @@ public class PagamentoFragment extends Fragment {
 
         String strDate = ft.format(date);
         Toast.makeText(getContext(), "A nova data de entrega é em " + strDate, Toast.LENGTH_SHORT).show();
+*/
 
-
-        edtDataBoleto = (EditText) getView().findViewById(R.id.edt_data_boleto_pag);*/
+        edtDataBoleto = (EditText) getView().findViewById(R.id.edt_data_boleto_pag);
+        edtDataBoleto.setText("14/12/2020");
         //View view = inflater.inflate(R.layout.fragment_pagamento, container, false);
+
+
+        //DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy".plusDays(1));
+        //Date date = new Date();
+        //return dateFormat.format(date);
+
+
 
         final LinearLayout linearBoleto = (LinearLayout) getView().findViewById(R.id.linear_boleto_pag);
         final LinearLayout linearCartao = (LinearLayout) getView().findViewById(R.id.linear_cartao_pag);
